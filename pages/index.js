@@ -1,11 +1,11 @@
 import { getSession } from "next-auth/client";
 import Head from "next/head";
-import Header from "../components/Header";
-import Login from "../components/Login";
-import Feed from "../components/Feed";
-import Sidebar from "../components/Sidebar";
-import Widget from "../components/Widget";
-import { db } from "../services/firebase";
+import Header from "./../components/Header";
+import Login from "./../components/Login";
+import Feed from "./../components/Feed";
+import Sidebar from "./../components/Sidebar";
+import Widget from "./../components/Widget";
+import { db } from "./../services/firebase";
 
 
 
