@@ -1,4 +1,4 @@
-import { getSession } from "next-auth/client";
+import { getSession, getProviders } from "next-auth/client";
 import Head from "next/head";
 import Header from "./../components/Header";
 import Login from "./../components/Login";
@@ -7,21 +7,16 @@ import Sidebar from "./../components/Sidebar";
 import Widget from "./../components/Widget";
 import { db } from "./../services/firebase";
 
-
-
-export default function Home({ session, posts }) {
-  if (!session) return <Login />;
+export default function Home({ session, posts, providers }) {
+  if (!session) return <Login providers={providers} />;
   return (
     <div className="h-screen bg-gray-100 overflow-hidden">
-      <Head>
-        <title>Facebook Clone- </title>
-      </Head>
-
       <Header />
 
-      <main className="flex ">
+      {/* Main Page */}
+      <main className="flex flex-col md:flex-row ">
         <Sidebar />
-              <Feed posts={ posts}/>
+        <Feed posts={posts} />
         <Widget />
       </main>
     </div>
@@ -31,6 +26,7 @@ export default function Home({ session, posts }) {
 export async function getServerSideProps(context) {
   // Get the user
   const session = await getSession(context);
+  const providers = await getProviders();
 
   const posts = await db.collection("posts").orderBy("timestamp", "desc").get();
 
@@ -44,6 +40,7 @@ export async function getServerSideProps(context) {
     props: {
       session,
       posts: docs,
+      providers: providers,
     },
   };
 }
