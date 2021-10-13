@@ -9,6 +9,12 @@
     }
 
     .inputIcon {
-        @apply flex items-center space-x-1 hover:bg-gray-100 flex-grow justify-center p-2 rounded-xl cursor-pointer;
+        @apply flex items-center text-xs space-x-1 md:text-base hover:bg-gray-100 flex-grow justify-center p-2 rounded-xl cursor-pointer;
+    }
+
+    .signInButton{
+
+
+        @apply flex items-center w-9/12 sm:w-96 py-2 px-4 m-2 bg-gray-200 rounded-md  font-medium shadow-md
     }
 }
