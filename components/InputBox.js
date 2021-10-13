@@ -59,15 +59,11 @@ export default function InputBox() {
     reader.onload = (readerEvent) => setImageToPost(readerEvent.target.result);
   }
 
-  function removeImage() {
-    setImageToPost(null);
-  }
-
   return (
-    <div className="bg-white p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-6">
+    <div className="bg-white p-1 m-3 mt-5 rounded-2xl shadow-md text-gray-500 font-medium">
       {/* Top */}
 
-      <div className="flex space-x-4 p-4 items-center ">
+      <div className="flex space-x-2 p-2 items-center ">
         <Image
           className="rounded-full"
           src={session.user.image}
@@ -76,9 +72,10 @@ export default function InputBox() {
           layout="fixed"
         />
 
+        {/* Input Form  */}
         <form className="flex flex-1">
           <input
-            className="rounded-full h-12 bg-gray-100 flex-grow px-5 focus:outline-none"
+            className="rounded-full h-10 text-xs md:text-medium md:h-12 bg-gray-100 flex-grow px-4 focus:outline-none"
             placeholder={`What's on your mind, ${session.user.name}`}
             ref={inputRef}
           />
@@ -87,7 +84,7 @@ export default function InputBox() {
         </form>
 
         {imageToPost && (
-          <div onClick={() => setImageToPost(null)} className="flex flex-col filter hover:brightness-110 transition duration-150 transform hover:scale-105 cursor-pointer">
+          <div onClick={() => setImageToPost(null)} className="flex flex-col filter scale-75 hover:brightness-110 transition duration-150 transform hover:scale-105 cursor-pointer">
             <img className="h-10 object-contain" src={imageToPost} />
 
             <p className="text-xs text-center text-red-500">Remove</p>
@@ -120,7 +117,7 @@ export default function InputBox() {
           />
         </div>
 
-        <div className="inputIcon ">
+        <div className="hidden sm:inputIcon ">
           <EmojiHappyIcon className="h-7 text-yellow-500" />
           <p className="text-xs capitalize sm:text-sm xl:text-base">
             feeling/activity

@@ -3,7 +3,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../services/firebase";
 import Post from "./Post";
 export default function Posts({ posts }) {
-  const [realtimePosts, loading, error] = useCollection(
+  const [realtimePosts] = useCollection(
     db.collection("posts").orderBy("timestamp", "desc")
   );
 
