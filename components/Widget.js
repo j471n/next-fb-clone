@@ -30,16 +30,14 @@ export default function Widget() {
 
       {contacts.map((contact) => {
         return (
-          <div className="flex items-center space-x-3 mb-2 relative hover:bg-gray-200 cursor-pointer p-2 rounded-lg font-medium">
+          <div key={contact.name} className="flex items-center space-x-3 mb-2 relative hover:bg-gray-200 cursor-pointer p-2 rounded-lg font-medium">
             <Image
-            
               className="rounded-full"
               objectFit="cover"
               src={contact.src}
               width={50}
               height={50}
               layout="fixed"
-            
             />
 
             <p>{contact.name}</p>
