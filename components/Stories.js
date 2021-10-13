@@ -30,31 +30,34 @@ const stories = [
 import Image from "next/image";
 export default function Stories() {
     return (
-        <div className="flex justify-center space-x-3 mx-auto">
+        <div className="flex justify-center px-2">
             {stories.map((story) => {
                 return (
-                    <div
-                        key={story.src}
-                        className="relative h-14 w-14 md:h-20 md:w-20 lg:h-56 lg:w-56 cursor-pointer overflow-x p-3 transition-transform lg:hover:scale-105"
-                    >
-                        <Image
-                            className="absolute opacity-0 lg:opacity-100 rounded-full z-50 top-10 lg:border-2 lg:border-blue-500"
-                            src={story.src}
-                            width={40}
-                            height={40}
-                            layout="fixed"
-                            objectFit="cover"
-                        />
-                        <Image
-                            className="object-cover filter brightness-75 m-2 border-solid border-4 border-blue-500 rounded-full lg:rounded-xl"
-                            src={story.src}
-                            layout="fill"
-                        />
+                  <div
+                    key={story.src}
+                    className="relative h-14 w-14 m-1  border-4 border-solid border-blue-500 md:border-transparent rounded-full md:h-20 md:w-20 lg:h-56 lg:w-56 cursor-pointer overflow-x transition-transform hover:scale-110"
+                  >
+                    {/* Profile Image */}
+                    <Image
+                      className="absolute opacity-0 lg:opacity-100 rounded-full z-50 lg:top-10 lg:left-5"
+                      src={story.profile}
+                      width={40}
+                      height={40}
+                      layout="fixed"
+                      objectFit="cover"
+                    />
 
-                        <p className="absolute opacity-0 lg:opacity-100 bottom-4 w-5/6 text-white text-sm font-bold truncate">
-                            {story.name}
-                        </p>
-                    </div>
+                    {/* Story Image */}
+                    <Image
+                      className="object-cover filter brightness-75 m-2 rounded-full lg:rounded-xl"
+                      src={story.src}
+                      layout="fill"
+                    />
+
+                    <p className="absolute opacity-0 lg:opacity-100 left-3 bottom-4 w-5/6 text-white text-sm font-bold truncate">
+                      {story.name}
+                    </p>
+                  </div>
                 );
             })}
         </div>

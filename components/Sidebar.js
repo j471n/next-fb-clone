@@ -18,7 +18,7 @@ import {
 export default function Sidebar() {
     const [session , loading] = useSession()
     return (
-        <div className="p-2 mt-5 max-w-[600px] xl:min-w-[300px]">
+        <div className="flex p-0 mt-2 items-center justify-evenly md:flex-col  md:justify-start  md:items-left md:w-min md:mt-5">
             <SidebarRow Icon={UserIcon} title="friends"/>
             <SidebarRow Icon={UserGroupIcon} title="groups"/>
             <SidebarRow Icon={ShoppingBagIcon} title="marketplace"/>
