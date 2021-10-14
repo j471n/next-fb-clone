@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeaderIcon from "./HeaderIcon";
 import { signOut, useSession } from "next-auth/client";
 import ConfirmLogout from "./Portals/ConfirmLogout";
+import Loading from "./Portals/Loading/Loading";
 
 import {
   BellIcon,
@@ -23,6 +24,18 @@ const Header = () => {
   const [session] = useSession();
 
   const [modal, setModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  function logout() {
+    setLoading(true);
+
+    // temporary loading
+    signOut().then(() => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    });
+  }
 
   return (
     <>
@@ -80,7 +93,8 @@ const Header = () => {
       </div>
 
       {/* Trying to make teh modal */}
-      {modal && <ConfirmLogout setModal={setModal} logout={signOut} />}
+      {modal && <ConfirmLogout setModal={setModal} logout={logout} />}
+      {loading && <Loading />}
     </>
   );
 };
