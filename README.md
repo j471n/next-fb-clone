@@ -23,7 +23,7 @@ It is the clone of the Facebook where you can upload the post with the images it
 
 ## Demo
 
-[Click Here to see the Live Demo](https://react-chatroom.vercel.app/)
+[Click Here to see the Live Demo](https://next-fb-clone.vercel.app/)
 
   
 ## Screenshots
@@ -45,7 +45,7 @@ Create a directory or a folder
 Clone the project
 
 ```bash
-  git clone https://github.com/j471n/react-chat-room.git
+  git clone https://github.com/j471n/next-fb-clone.git
 ```
 
 Go to the project directory
