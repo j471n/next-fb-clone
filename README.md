@@ -29,8 +29,8 @@ It is the clone of the Facebook where you can upload the post with the images it
 ## Screenshots
 
 <p>
-  <img width="450" src="https://i.imgur.com/ViYfpVp.png" />
-  <img width="450" src="https://i.imgur.com/ELrugHJ.png"/>
+  <img width="400" src="https://i.imgur.com/ViYfpVp.png" />
+  <img width="400" src="https://i.imgur.com/ELrugHJ.png"/>
   <img width="200" src="https://i.imgur.com/ihMhey9.png"/>
   <img width="200" src="https://i.imgur.com/xTuOFYy.png"/>
 </p>
